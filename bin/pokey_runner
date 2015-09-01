@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require "pokey_runner"
+
+args = ARGV.dup
+ARGV.clear
+command = args.shift.strip rescue 'help'
+
+PokeyRunner::Command.run(command, args)
