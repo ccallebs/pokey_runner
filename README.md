@@ -22,7 +22,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Adding hooks
+
+    $ pokey_runner hook custom_name
+    
+This will add a custom hook to your specified hook directory. Please keep in mind that all hooks must be suffixed with `Hook`. For example, the above would generate the `CustomNameHook` class.
+
+### Running the process
+
+    $ pokey_runner start
 
 ## Development
 
