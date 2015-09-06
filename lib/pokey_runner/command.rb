@@ -1,9 +1,10 @@
 module PokeyRunner
   class Command
-    def self.run(command, args)
+    def self.parse!(command, args = {})
       case command
-      when 'start'
+      when 'start', 's'
         PokeyRunner.run!
+      when 'generate' || 'g'
       when 'help'
         # Documentation
       end
