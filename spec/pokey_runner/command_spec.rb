@@ -1,4 +1,5 @@
 require 'pokey_runner/command'
+require 'generators/generate/hook_generator'
 
 describe PokeyRunner::Command do
   context 'when passed start' do
@@ -28,20 +29,35 @@ describe PokeyRunner::Command do
   end
 
   context 'when passed generate' do
-    it 'adds hook' do
+    subject { PokeyRunner::Command.parse!('generate') }
 
+    before do
+      allow(PokeyRunner::Generators::HookGenerator).to receive(:add_hook).and_return true
+    end
+
+    it 'adds hook' do
+      expect(PokeyRunner::Generators::HookGenerator).to receive(:add_hook)
+      subject
     end
   end
 
   context 'when passed g' do
-    it 'adds hook' do
+    subject { PokeyRunner::Command.parse!('g') }
 
+    before do
+      allow(PokeyRunner::Generators::HookGenerator).to receive(:add_hook).and_return true
+    end
+
+    it 'adds hook' do
+      expect(PokeyRunner::Generators::HookGenerator).to receive(:add_hook)
+      subject
     end
   end
 
   context 'when passed help' do
-    it 'prints documentation' do
+    subject { PokeyRunner::Command.parse!('help') }
 
+    it 'prints documentation' do
     end
   end
 end

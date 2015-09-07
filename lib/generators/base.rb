@@ -3,7 +3,7 @@ require 'fileutils'
 module PokeyRunner
   module Generators
     class Base
-      def self.source_root
+      def self.source_root(arg)
         File.dirname(__FILE__)
       end
 
