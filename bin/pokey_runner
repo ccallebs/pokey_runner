@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
-require "pokey_runner"
+require "./lib/pokey_runner"
+require "./lib/pokey_runner/command"
 
 args = ARGV.dup
 ARGV.clear
